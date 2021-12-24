@@ -1,4 +1,6 @@
 package com.universidad.informacionacademica.domain.actividad;
 
-public class FechaLimite {
+import co.com.sofka.domain.generic.Entity;
+
+public class FechaLimite extends Entity {
 }
