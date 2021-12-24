@@ -1,4 +1,6 @@
 package com.universidad.informacionacademica.domain.asignatura.values;
 
-public class IdAsignatura {
+import co.com.sofka.domain.generic.Identity;
+
+public class IdAsignatura extends Identity {
 }
