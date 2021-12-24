@@ -12,6 +12,6 @@ public class NotaActualConsultada extends DomainEvent {
     }
 
     public Nota getNota(){
-        return getNota();
+        return nota;
     }
 }

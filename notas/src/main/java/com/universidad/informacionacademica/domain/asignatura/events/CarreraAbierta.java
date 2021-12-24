@@ -1,11 +1,17 @@
 package com.universidad.informacionacademica.domain.asignatura.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.universidad.informacionacademica.domain.asignatura.values.IdFacultad;
-import com.universidad.informacionacademica.domain.estudiante.values.IdCarrera;
+import com.universidad.informacionacademica.domain.estudiante.Carrera;
 
 public class CarreraAbierta extends DomainEvent {
-    public CarreraAbierta(IdCarrera idCarrera, IdFacultad idFacultad) {
-        super("");
+    private final Carrera carrera;
+
+    public CarreraAbierta(Carrera carrera) {
+        super("universidad.informacionacademica.carreraabierta");
+        this.carrera = carrera;
+    }
+
+    public Carrera getIdFacultad() {
+        return carrera;
     }
 }

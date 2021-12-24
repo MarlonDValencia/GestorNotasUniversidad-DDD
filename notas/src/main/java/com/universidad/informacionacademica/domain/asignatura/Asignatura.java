@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.universidad.informacionacademica.domain.asignatura.events.*;
 import com.universidad.informacionacademica.domain.asignatura.values.*;
+import com.universidad.informacionacademica.domain.estudiante.Carrera;
 import com.universidad.informacionacademica.domain.estudiante.values.IdCarrera;
 
 import java.util.List;
@@ -45,8 +46,8 @@ public class Asignatura extends AggregateEvent<IdAsignatura> {
         appendChange(new CarreraEliminada(idCarrera,idFacultad)).apply();
     }
     //Tenerla En Cuenta
-    public void abrirNuevaCarrera(IdCarrera idCarrera, IdFacultad idFacultad){
-        appendChange(new CarreraAbierta(idCarrera,idFacultad)).apply();
+    public void abrirNuevaCarrera(Carrera Carrera){
+        appendChange(new CarreraAbierta(Carrera)).apply();
     }
 
     public void cambiarDocente(IdAsignatura idAsignatura, Docente docente, Docente newDocente){

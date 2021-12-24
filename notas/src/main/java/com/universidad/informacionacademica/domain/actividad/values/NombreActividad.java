@@ -4,19 +4,19 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Incidencia implements ValueObject<Integer>{
-    private final Integer value;
+public class NombreActividad implements ValueObject<String>{
+    private final String value;
 
-    public Incidencia(Integer value){
+    public NombreActividad(String value) {
         this.value = Objects.requireNonNull(value);
     }
 
-    public Integer getIncidencia(){
-        return value;
+    public String getNombreActividad(){
+        return this.value;
     }
 
     @Override
-    public Integer value(){
+    public String value() {
         return value;
     }
 }

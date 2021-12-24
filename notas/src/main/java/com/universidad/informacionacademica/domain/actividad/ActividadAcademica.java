@@ -2,26 +2,27 @@ package com.universidad.informacionacademica.domain.actividad;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import com.universidad.informacionacademica.domain.actividad.events.CalificacionEditada;
+import com.universidad.informacionacademica.domain.actividad.events.ClasificacionReplanteada;
+import com.universidad.informacionacademica.domain.actividad.events.PlazoAlargado;
 import com.universidad.informacionacademica.domain.actividad.values.Estado;
 import com.universidad.informacionacademica.domain.actividad.values.IdActividad;
-import com.universidad.informacionacademica.domain.actividad.values.Nombre;
+import com.universidad.informacionacademica.domain.actividad.values.NombreActividad;
 import com.universidad.informacionacademica.domain.actividad.values.Porcentaje;
-import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.values.IdAsignatura;
 
 import java.util.List;
 
 public class ActividadAcademica extends AggregateEvent<IdActividad> {
-    protected Nombre nombre;
+    protected NombreActividad nombreActividad;
     protected Porcentaje porcentaje;
     protected Estado estado;
     protected Clasificacion clasificacion;
     protected Calificacion calificacion;
     protected FechaLimite fechaLimite;
 
-    public ActividadAcademica(IdActividad idActividad, Nombre nombre, Porcentaje porcentaje, Estado estado, Clasificacion clasificacion, Calificacion calificacion, FechaLimite fechaLimite) {
+    public ActividadAcademica(IdActividad idActividad, NombreActividad nombreActividad, Porcentaje porcentaje, Estado estado, Clasificacion clasificacion, Calificacion calificacion, FechaLimite fechaLimite) {
         super(idActividad);
-        this.nombre = nombre;
+        this.nombreActividad = nombreActividad;
         this.porcentaje = porcentaje;
         this.estado = estado;
         this.clasificacion = clasificacion;
@@ -40,5 +41,15 @@ public class ActividadAcademica extends AggregateEvent<IdActividad> {
         return actividadAcademica;
     }
 
+    public void replantearClasificacion(IdActividad idActividad, Clasificacion clasificacion){
+        appendChange(new ClasificacionReplanteada(idActividad, clasificacion)).apply();
+    }
 
+    public void editarCalificacionDeLaActividad(IdActividad idActividad, Calificacion calificacion){
+        appendChange(new CalificacionEditada(idActividad, calificacion)).apply();
+    }
+
+    public void alargarElPlazoDeLaActividad(IdActividad idActividad,FechaLimite fechaLimite){
+        appendChange(new PlazoAlargado(idActividad,fechaLimite)).apply();
+    }
 }
