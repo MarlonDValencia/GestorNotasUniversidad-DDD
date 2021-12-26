@@ -3,13 +3,11 @@ package com.universidad.informacionacademica.domain.estudiante;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.values.IdAsignatura;
-import com.universidad.informacionacademica.domain.asignatura.values.NombreAsignatura;
-import com.universidad.informacionacademica.domain.estudiante.events.MateriaCancelada;
-import com.universidad.informacionacademica.domain.estudiante.events.MateriaCursadaAgregada;
-import com.universidad.informacionacademica.domain.estudiante.events.MateriaInscrita;
+import com.universidad.informacionacademica.domain.asignatura.values.Nota;
+import com.universidad.informacionacademica.domain.estudiante.events.*;
 import com.universidad.informacionacademica.domain.estudiante.values.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -44,11 +42,12 @@ public class Estudiante extends AggregateEvent<IdEstudiante> {
         appendChange(new MateriaCancelada(asignatura,this)).apply();
     }
 
-    public void agregarMateriaCursada(Asignatura asignatura){
-        appendChange(new MateriaCursadaAgregada(asignatura)).apply();
+    public void agregarMateriaCursada(Asignatura asignatura, Nota nota){
+        appendChange(new MateriaCursadaAgregada(asignatura, nota)).apply();
     }
 
-    public void consultarHistoriaAcademica(){
+    public void consultarHistoriaAcademica(HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance){
+        appendChange(new HistoriaAcademicaConsultada(materiasCursadas,porcentajeDeAvance));
     }
 
     public NombreEstudiante nombreEstudiante() {

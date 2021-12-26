@@ -1,8 +1,11 @@
-package com.universidad.informacionacademica.domain.estudiante;
+package com.universidad.informacionacademica.domain.estudiante.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.domain.generic.EventChange;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
+import com.universidad.informacionacademica.domain.estudiante.Carrera;
+import com.universidad.informacionacademica.domain.estudiante.HistoriaAcademica;
+import com.universidad.informacionacademica.domain.estudiante.Pensum;
 import com.universidad.informacionacademica.domain.estudiante.values.IdEstudiante;
 import com.universidad.informacionacademica.domain.estudiante.values.NombreEstudiante;
 import com.universidad.informacionacademica.domain.estudiante.values.Semestre;

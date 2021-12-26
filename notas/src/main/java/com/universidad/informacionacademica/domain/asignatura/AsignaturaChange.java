@@ -1,4 +1,4 @@
-              package com.universidad.informacionacademica.domain.asignatura;
+package com.universidad.informacionacademica.domain.asignatura;
 
 import co.com.sofka.domain.generic.EventChange;
 import com.universidad.informacionacademica.domain.asignatura.events.*;
@@ -13,6 +13,10 @@ public class AsignaturaChange extends EventChange {
             asignatura.tipologia = event.getTipologia();
             asignatura.programa = event.getProgramaDelCurso();
             asignatura.nota = event.getNota();
+        });
+
+        apply((CarreraEliminada event) -> {
+
         });
 
         apply((DocenteCambiado event) -> {

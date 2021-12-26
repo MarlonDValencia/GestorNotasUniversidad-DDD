@@ -1,9 +1,10 @@
 package com.universidad.informacionacademica.domain.estudiante.commands;
 
+import co.com.sofka.domain.generic.Command;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
 import com.universidad.informacionacademica.domain.estudiante.Estudiante;
 
-public class CancelarMateria {
+public class CancelarMateria extends Command {
     private final Asignatura asignatura;
     private final Estudiante estudiante;
 
