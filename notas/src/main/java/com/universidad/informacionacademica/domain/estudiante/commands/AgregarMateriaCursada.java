@@ -1,4 +1,4 @@
 package com.universidad.informacionacademica.domain.estudiante.commands;
 
-public class MatricularUnSemestre {
+public class AgregarMateriaCursada {
 }

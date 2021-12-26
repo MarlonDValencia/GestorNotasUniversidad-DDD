@@ -1,2 +1,4 @@
-package com.universidad.informacionacademica.domain.estudiante;public class Pensum {
+package com.universidad.informacionacademica.domain.estudiante;
+
+public class Pensum {
 }

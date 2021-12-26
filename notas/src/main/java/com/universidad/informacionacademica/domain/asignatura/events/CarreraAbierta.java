@@ -11,7 +11,7 @@ public class CarreraAbierta extends DomainEvent {
         this.carrera = carrera;
     }
 
-    public Carrera getIdFacultad() {
+    public Carrera getCarrera() {
         return carrera;
     }
 }
