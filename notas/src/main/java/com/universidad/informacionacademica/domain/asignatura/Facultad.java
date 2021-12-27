@@ -1,7 +1,6 @@
 package com.universidad.informacionacademica.domain.asignatura;
 
 import co.com.sofka.domain.generic.Entity;
-import com.universidad.informacionacademica.domain.asignatura.events.CarreraEliminada;
 import com.universidad.informacionacademica.domain.asignatura.values.*;
 import com.universidad.informacionacademica.domain.estudiante.Carrera;
 import com.universidad.informacionacademica.domain.estudiante.values.IdCarrera;
@@ -28,5 +27,11 @@ public class Facultad extends Entity<IdFacultad> {
         this.carreras.getCarreras().add(carrera);
     }
 
+    public NombreFacultad nombreFacultad() {
+        return nombreFacultad;
+    }
 
+    public Carreras carreras() {
+        return carreras;
+    }
 }

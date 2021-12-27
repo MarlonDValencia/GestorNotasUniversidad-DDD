@@ -35,19 +35,19 @@ public class Estudiante extends AggregateEvent<IdEstudiante> {
         events.forEach(estudiante::applyEvent);
         return estudiante;
     }
-    public void inscribirMateria(Asignatura asignatura){
-        appendChange(new MateriaInscrita(asignatura)).apply();
+    public void inscribirMateria(Asignatura asignatura, Estudiante estudiante){
+        appendChange(new MateriaInscrita(asignatura, estudiante)).apply();
     }
-    public void cancelarMateria(Asignatura asignatura){
-        appendChange(new MateriaCancelada(asignatura,this)).apply();
+    public void cancelarMateria(Asignatura asignatura, Estudiante estudiante){
+        appendChange(new MateriaCancelada(asignatura,estudiante)).apply();
     }
 
     public void agregarMateriaCursada(Asignatura asignatura, Nota nota){
         appendChange(new MateriaCursadaAgregada(asignatura, nota)).apply();
     }
 
-    public void consultarHistoriaAcademica(HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance){
-        appendChange(new HistoriaAcademicaConsultada(materiasCursadas,porcentajeDeAvance));
+    public void consultarHistoriaAcademica(HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance, Estudiante estudiante){
+        appendChange(new HistoriaAcademicaConsultada(materiasCursadas,porcentajeDeAvance,estudiante));
     }
 
     public NombreEstudiante nombreEstudiante() {

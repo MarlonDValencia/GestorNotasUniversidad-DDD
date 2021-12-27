@@ -2,16 +2,23 @@ package com.universidad.informacionacademica.domain.asignatura.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.universidad.informacionacademica.domain.asignatura.values.*;
+import com.universidad.informacionacademica.domain.estudiante.Carrera;
 
 public class EliminarCarrera extends Command {
+    private final IdAsignatura idAsignatura;
     private final IdFacultad idFacultad;
     private final NombreFacultad nombreFacultad;
-    private final Carreras carreras;
+    private final Carrera carrera;
 
-    public EliminarCarrera(IdFacultad idFacultad, NombreFacultad nombreFacultad, Carreras carreras) {
+    public EliminarCarrera(IdAsignatura idAsignatura,IdFacultad idFacultad, NombreFacultad nombreFacultad, Carrera carrera) {
+        this.idAsignatura = idAsignatura;
         this.idFacultad = idFacultad;
         this.nombreFacultad = nombreFacultad;
-        this.carreras = carreras;
+        this.carrera = carrera;
+    }
+
+    public IdAsignatura getIdAsignatura() {
+        return idAsignatura;
     }
 
     public IdFacultad getIdFacultad() {
@@ -22,7 +29,7 @@ public class EliminarCarrera extends Command {
         return nombreFacultad;
     }
 
-    public Carreras getCarreras() {
-        return carreras;
+    public Carrera getCarrera() {
+        return carrera;
     }
 }

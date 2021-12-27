@@ -46,8 +46,8 @@ public class Asignatura extends AggregateEvent<IdAsignatura> {
         appendChange(new CarreraEliminada(idCarrera,idFacultad)).apply();
     }
     //Tenerla En Cuenta
-    public void abrirNuevaCarrera(Carrera Carrera){
-        appendChange(new CarreraAbierta(Carrera)).apply();
+    public void abrirNuevaCarrera(IdAsignatura idAsignatura, Carrera carrera, IdFacultad idFacultad){
+        appendChange(new CarreraAbierta(idAsignatura,carrera,idFacultad)).apply();
     }
 
     public void cambiarDocente(IdAsignatura idAsignatura, Docente docente, Docente newDocente){
