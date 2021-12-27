@@ -1,12 +1,12 @@
-package com.universidad.informacionacademica.domain.asignatura.events;
+package com.universidad.informacionacademica.domain.asignatura.commands;
 
-import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.domain.generic.Command;
 import com.universidad.informacionacademica.domain.asignatura.Departamento;
 import com.universidad.informacionacademica.domain.asignatura.Docente;
 import com.universidad.informacionacademica.domain.asignatura.Facultad;
 import com.universidad.informacionacademica.domain.asignatura.values.*;
 
-public class AsignaturaCreada extends DomainEvent{
+public class CrearAsignaturaCommand extends Command {
     private final IdAsignatura idAsignatura;
     private final NombreAsignatura nombreAsignatura;
     private final Creditos creditos;
@@ -17,9 +17,7 @@ public class AsignaturaCreada extends DomainEvent{
     private final Facultad facultad;
     private final Departamento departamento;
 
-
-    public AsignaturaCreada(IdAsignatura idAsignatura, NombreAsignatura nombreAsignatura, Creditos creditos, Tipologia tipologia, ProgramaDelCurso programaDelCurso, Nota nota, Docente docente, Facultad facultad, Departamento departamento) {
-        super("universidad.informacionacademica.asignaturacreada");
+    public CrearAsignaturaCommand(IdAsignatura idAsignatura, NombreAsignatura nombreAsignatura, Creditos creditos, Tipologia tipologia, ProgramaDelCurso programaDelCurso, Nota nota, Docente docente, Facultad facultad, Departamento departamento) {
         this.idAsignatura = idAsignatura;
         this.nombreAsignatura = nombreAsignatura;
         this.creditos = creditos;
@@ -51,10 +49,6 @@ public class AsignaturaCreada extends DomainEvent{
         return nota;
     }
 
-    public IdAsignatura getIdAsignatura() {
-        return idAsignatura;
-    }
-
     public Docente getDocente() {
         return docente;
     }
@@ -65,5 +59,9 @@ public class AsignaturaCreada extends DomainEvent{
 
     public Departamento getDepartamento() {
         return departamento;
+    }
+
+    public IdAsignatura getIdAsignatura() {
+        return idAsignatura;
     }
 }

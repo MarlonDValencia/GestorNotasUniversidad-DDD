@@ -1,9 +1,10 @@
 package com.universidad.informacionacademica.domain.estudiante;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.Entity;
 import com.universidad.informacionacademica.domain.estudiante.values.*;
 
-public class Carrera extends AggregateEvent<IdCarrera> {
+public class Carrera extends Entity<IdCarrera> {
     private final NombreCarrera nombreCarrera;
     private final NumeroDeCreditos numeroDeCreditos;
     private EstadoSemestre estadoSemestre;

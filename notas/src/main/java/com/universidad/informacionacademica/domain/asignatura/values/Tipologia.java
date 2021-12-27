@@ -17,6 +17,6 @@ public class Tipologia implements ValueObject<String> {
 
     @Override
     public String value(){
-        return value();
+        return tipoDeMateria;
     }
 }

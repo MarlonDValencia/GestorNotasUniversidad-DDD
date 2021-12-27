@@ -16,7 +16,7 @@ public class AbrirCarreraUseCase extends UseCase<RequestCommand<AbrirCarreraComm
         if(asignatura.facultad().carreras().getCarreras().contains(command.getCarrera())){
             throw new BusinessException(command.getCarrera().toString(), "Dicha carrera ya se encuentra en la facultad");
         }
-        asignatura.facultad().abrirNuevaCarrera(command.getCarrera());
+        asignatura.abrirNuevaCarrera(command.getIdAsignatura(),command.getCarrera(),command.getIdFacultad());
         emit().onResponse(new ResponseEvents(asignatura.getUncommittedChanges()));
     }
 }

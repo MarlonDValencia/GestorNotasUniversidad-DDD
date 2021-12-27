@@ -8,6 +8,7 @@ import com.universidad.informacionacademica.domain.estudiante.Carrera;
 import com.universidad.informacionacademica.domain.estudiante.values.IdCarrera;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Asignatura extends AggregateEvent<IdAsignatura> {
     protected NombreAsignatura nombreAsignatura;
@@ -48,6 +49,7 @@ public class Asignatura extends AggregateEvent<IdAsignatura> {
         appendChange(new CarreraAbierta(idAsignatura,carrera,idFacultad)).apply();
     }
 
+
     public void cambiarDocente(IdAsignatura idAsignatura, Docente docente, Docente newDocente){
         var id = docente.identity();
         appendChange(new DocenteCambiado(idAsignatura,id,newDocente)).apply();
@@ -68,6 +70,10 @@ public class Asignatura extends AggregateEvent<IdAsignatura> {
     public void organizarProgramaCurso(IdAsignatura idAsignatura, Docente docente,ProgramaDelCurso programa){
         var id = docente.identity();
         appendChange(new ProgramaDelCursoOrganizado(idAsignatura,id,programa)).apply();
+    }
+
+    public void crearFacultad(IdFacultad idFacultad, NombreFacultad nombreFacultad, Carreras carreras){
+        appendChange(new FacultadCreada(idFacultad,nombreFacultad,carreras)).apply();
     }
 
     public NombreAsignatura nombreAsignatura() {

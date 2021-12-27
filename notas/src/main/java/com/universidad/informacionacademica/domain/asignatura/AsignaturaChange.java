@@ -13,6 +13,10 @@ public class AsignaturaChange extends EventChange {
             asignatura.tipologia = event.getTipologia();
             asignatura.programa = event.getProgramaDelCurso();
             asignatura.nota = event.getNota();
+            asignatura.facultad = event.getFacultad();
+            asignatura.docente = event.getDocente();
+            asignatura.departamento = event.getDepartamento();
+
         });
 
         apply((CarreraEliminada event) -> {
@@ -35,6 +39,10 @@ public class AsignaturaChange extends EventChange {
 
         apply((ProgramaDelCursoOrganizado event) -> {
             asignatura.programa =  event.getProgramaDelCurso();
+        });
+
+        apply((FacultadCreada event) -> {
+            asignatura.facultad = new Facultad(event.getIdFacultad(),event.getNombreFacultad(),event.getCarreras());
         });
     }
 }
