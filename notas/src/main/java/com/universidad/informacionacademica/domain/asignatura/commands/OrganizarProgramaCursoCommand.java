@@ -3,16 +3,17 @@ package com.universidad.informacionacademica.domain.asignatura.commands;
 import co.com.sofka.domain.generic.Command;
 import com.universidad.informacionacademica.domain.asignatura.Docente;
 import com.universidad.informacionacademica.domain.asignatura.values.IdAsignatura;
+import com.universidad.informacionacademica.domain.asignatura.values.ProgramaDelCurso;
 
-public class CambiarDocente extends Command {
+public class OrganizarProgramaCursoCommand extends Command {
     private final IdAsignatura idAsignatura;
     private final Docente docente;
-    private final Docente newDocente;
+    private final ProgramaDelCurso programa;
 
-    public CambiarDocente(IdAsignatura idAsignatura, Docente docente, Docente newDocente) {
+    public OrganizarProgramaCursoCommand(IdAsignatura idAsignatura, Docente docente, ProgramaDelCurso programa) {
         this.idAsignatura = idAsignatura;
         this.docente = docente;
-        this.newDocente = newDocente;
+        this.programa = programa;
     }
 
     public IdAsignatura getIdAsignatura() {
@@ -23,7 +24,7 @@ public class CambiarDocente extends Command {
         return docente;
     }
 
-    public Docente getNewDocente() {
-        return newDocente;
+    public ProgramaDelCurso getPrograma() {
+        return programa;
     }
 }

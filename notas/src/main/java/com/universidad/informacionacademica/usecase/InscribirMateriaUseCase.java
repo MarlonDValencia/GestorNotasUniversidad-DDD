@@ -5,12 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.estudiante.Estudiante;
-import com.universidad.informacionacademica.domain.estudiante.commands.AgregarMateriaCursada;
-import com.universidad.informacionacademica.domain.estudiante.commands.InscribirMateria;
+import com.universidad.informacionacademica.domain.estudiante.commands.InscribirMateriaCommand;
 
-public class InscribirMateriaUseCase extends UseCase<RequestCommand<InscribirMateria>, ResponseEvents> {
+public class InscribirMateriaUseCase extends UseCase<RequestCommand<InscribirMateriaCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<InscribirMateria> requestCommand){
+    public void executeUseCase(RequestCommand<InscribirMateriaCommand> requestCommand){
         var command = requestCommand.getCommand();
         var estudiante = Estudiante.from(command.getEstudiante().identity(),retrieveEvents());
         if(estudiante.asignaturasInscritas().contains(command.getAsignatura())){

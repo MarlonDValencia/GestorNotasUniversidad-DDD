@@ -2,22 +2,22 @@ package com.universidad.informacionacademica.domain.asignatura.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.values.Creditos;
+import com.universidad.informacionacademica.domain.asignatura.values.Nota;
 
-public class ModificarCreditos extends Command {
+public class ConsultarNotaActualCommand extends Command {
     private final Asignatura asignatura;
-    private final Creditos creditos;
+    private final Nota nota;
 
-    public ModificarCreditos(Asignatura asignatura, Creditos creditos) {
+    public ConsultarNotaActualCommand(Asignatura asignatura) {
         this.asignatura = asignatura;
-        this.creditos = creditos;
+        this.nota = asignatura.nota();
     }
 
     public Asignatura getAsignatura() {
         return asignatura;
     }
 
-    public Creditos getCreditos() {
-        return creditos;
+    public Nota getNota(){
+        return nota;
     }
 }

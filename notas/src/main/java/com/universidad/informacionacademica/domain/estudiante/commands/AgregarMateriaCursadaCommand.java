@@ -5,12 +5,12 @@ import com.universidad.informacionacademica.domain.asignatura.Asignatura;
 import com.universidad.informacionacademica.domain.asignatura.values.Nota;
 import com.universidad.informacionacademica.domain.estudiante.values.IdEstudiante;
 
-public class AgregarMateriaCursada extends Command {
+public class AgregarMateriaCursadaCommand extends Command {
     private final IdEstudiante idEstudiante;
     private final Asignatura materiaCursada;
     private final Nota nota;
 
-    public AgregarMateriaCursada(Asignatura materiaCursada,IdEstudiante idEstudiante,Nota nota) {
+    public AgregarMateriaCursadaCommand(Asignatura materiaCursada, IdEstudiante idEstudiante, Nota nota) {
         this.idEstudiante = idEstudiante;
         this.materiaCursada = materiaCursada;
         this.nota = nota;

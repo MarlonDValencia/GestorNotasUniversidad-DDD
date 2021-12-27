@@ -5,11 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.commands.EliminarCarrera;
+import com.universidad.informacionacademica.domain.asignatura.commands.EliminarCarreraCommand;
 
-public class EliminarCarreraUseCase extends UseCase<RequestCommand<EliminarCarrera>, ResponseEvents> {
+public class EliminarCarreraUseCase extends UseCase<RequestCommand<EliminarCarreraCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<EliminarCarrera> requestCommand){
+    public void executeUseCase(RequestCommand<EliminarCarreraCommand> requestCommand){
         var command = requestCommand.getCommand();
         var asignatura = Asignatura.from(command.getIdAsignatura(),retrieveEvents());
 

@@ -41,11 +41,9 @@ public class Asignatura extends AggregateEvent<IdAsignatura> {
         events.forEach(asignatura::applyEvent);
         return asignatura;
     }
-    //Tenerla En Cuenta
     public void eliminarCarrera(IdCarrera idCarrera, IdFacultad idFacultad){
         appendChange(new CarreraEliminada(idCarrera,idFacultad)).apply();
     }
-    //Tenerla En Cuenta
     public void abrirNuevaCarrera(IdAsignatura idAsignatura, Carrera carrera, IdFacultad idFacultad){
         appendChange(new CarreraAbierta(idAsignatura,carrera,idFacultad)).apply();
     }

@@ -5,13 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.commands.AbrirCarrera;
-import com.universidad.informacionacademica.domain.asignatura.commands.CambiarDocente;
-import com.universidad.informacionacademica.domain.asignatura.events.DocenteCambiado;
+import com.universidad.informacionacademica.domain.asignatura.commands.CambiarDocenteCommand;
 
-public class CambiarDocenteUseCase extends UseCase<RequestCommand<CambiarDocente>, ResponseEvents> {
+public class CambiarDocenteUseCase extends UseCase<RequestCommand<CambiarDocenteCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<CambiarDocente> requestCommand){
+    public void executeUseCase(RequestCommand<CambiarDocenteCommand> requestCommand){
         var command = requestCommand.getCommand();
         var asignatura = Asignatura.from(command.getIdAsignatura(),retrieveEvents());
         if(command.getDocente().equals(command.getNewDocente())){

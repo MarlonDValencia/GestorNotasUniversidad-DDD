@@ -7,14 +7,12 @@ public class Carrera extends AggregateEvent<IdCarrera> {
     private final NombreCarrera nombreCarrera;
     private final NumeroDeCreditos numeroDeCreditos;
     private EstadoSemestre estadoSemestre;
-    private final PromedioAcumulado promedioAcumulado;
 
-    public Carrera(IdCarrera idCarrera, NombreCarrera nombreCarrera, NumeroDeCreditos numeroDeCreditos, EstadoSemestre estadoSemestre, PromedioAcumulado promedioAcumulado) {
+    public Carrera(IdCarrera idCarrera, NombreCarrera nombreCarrera, NumeroDeCreditos numeroDeCreditos, EstadoSemestre estadoSemestre) {
         super(idCarrera);
         this.nombreCarrera = nombreCarrera;
         this.numeroDeCreditos = numeroDeCreditos;
         this.estadoSemestre = estadoSemestre;
-        this.promedioAcumulado = promedioAcumulado;
     }
 
     public void matricularSemestre(EstadoSemestre estadoSemestre){
@@ -32,7 +30,4 @@ public class Carrera extends AggregateEvent<IdCarrera> {
         return estadoSemestre;
     }
 
-    public PromedioAcumulado promedioAcumulado() {
-        return promedioAcumulado;
-    }
 }

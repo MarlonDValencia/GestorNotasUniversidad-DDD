@@ -5,11 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.commands.ModificarCreditos;
+import com.universidad.informacionacademica.domain.asignatura.commands.ModificarCreditosCommand;
 
-public class ModificarCreditosUseCase extends UseCase<RequestCommand<ModificarCreditos>, ResponseEvents> {
+public class ModificarCreditosUseCase extends UseCase<RequestCommand<ModificarCreditosCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<ModificarCreditos> requestCommand){
+    public void executeUseCase(RequestCommand<ModificarCreditosCommand> requestCommand){
         var command = requestCommand.getCommand();
         var asignatura = Asignatura.from(command.getAsignatura().identity(),retrieveEvents());
         if(command.getCreditos().value()>5){

@@ -4,13 +4,13 @@ import co.com.sofka.domain.generic.Command;
 import com.universidad.informacionacademica.domain.asignatura.values.*;
 import com.universidad.informacionacademica.domain.estudiante.Carrera;
 
-public class EliminarCarrera extends Command {
+public class EliminarCarreraCommand extends Command {
     private final IdAsignatura idAsignatura;
     private final IdFacultad idFacultad;
     private final NombreFacultad nombreFacultad;
     private final Carrera carrera;
 
-    public EliminarCarrera(IdAsignatura idAsignatura,IdFacultad idFacultad, NombreFacultad nombreFacultad, Carrera carrera) {
+    public EliminarCarreraCommand(IdAsignatura idAsignatura, IdFacultad idFacultad, NombreFacultad nombreFacultad, Carrera carrera) {
         this.idAsignatura = idAsignatura;
         this.idFacultad = idFacultad;
         this.nombreFacultad = nombreFacultad;

@@ -8,12 +8,12 @@ import com.universidad.informacionacademica.domain.estudiante.values.PorcentajeD
 
 import java.util.HashMap;
 
-public class ConsultarHistoriaAcademica extends Command {
+public class ConsultarHistoriaAcademicaCommand extends Command {
     private final HashMap<Asignatura, Nota> materiasCursadas;
     private final PorcentajeDeAvance porcentajeDeAvance;
     private final Estudiante estudiante;
 
-    public ConsultarHistoriaAcademica(HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance, Estudiante estudiante) {
+    public ConsultarHistoriaAcademicaCommand(HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance, Estudiante estudiante) {
         this.materiasCursadas = materiasCursadas;
         this.porcentajeDeAvance = porcentajeDeAvance;
         this.estudiante = estudiante;

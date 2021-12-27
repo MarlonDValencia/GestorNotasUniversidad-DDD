@@ -5,11 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.commands.ConsultarNotaActual;
+import com.universidad.informacionacademica.domain.asignatura.commands.ConsultarNotaActualCommand;
 
-public class ConsultarNotaActualUseCase extends UseCase<RequestCommand<ConsultarNotaActual>, ResponseEvents> {
+public class ConsultarNotaActualUseCase extends UseCase<RequestCommand<ConsultarNotaActualCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<ConsultarNotaActual> requestCommand){
+    public void executeUseCase(RequestCommand<ConsultarNotaActualCommand> requestCommand){
         var command = requestCommand.getCommand();
         var asignatura = Asignatura.from(command.getAsignatura().identity(),retrieveEvents());
         if(command.getNota().value()>5.0 && command.getNota().value()<0){

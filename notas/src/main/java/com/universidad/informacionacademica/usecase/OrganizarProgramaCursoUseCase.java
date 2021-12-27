@@ -5,12 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.asignatura.Asignatura;
-import com.universidad.informacionacademica.domain.asignatura.commands.OrganizarProgramaCurso;
-import com.universidad.informacionacademica.domain.estudiante.commands.AgregarMateriaCursada;
+import com.universidad.informacionacademica.domain.asignatura.commands.OrganizarProgramaCursoCommand;
 
-public class OrganizarProgramaCursoUseCase extends UseCase<RequestCommand<OrganizarProgramaCurso>, ResponseEvents> {
+public class OrganizarProgramaCursoUseCase extends UseCase<RequestCommand<OrganizarProgramaCursoCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<OrganizarProgramaCurso> requestCommand){
+    public void executeUseCase(RequestCommand<OrganizarProgramaCursoCommand> requestCommand){
         var command = requestCommand.getCommand();
         var asignatura = Asignatura.from(command.getIdAsignatura(),retrieveEvents());
         if(command.getDocente().equals(asignatura.docente())){

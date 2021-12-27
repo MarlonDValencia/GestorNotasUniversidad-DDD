@@ -5,11 +5,11 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import com.universidad.informacionacademica.domain.estudiante.Estudiante;
-import com.universidad.informacionacademica.domain.estudiante.commands.ConsultarHistoriaAcademica;
+import com.universidad.informacionacademica.domain.estudiante.commands.ConsultarHistoriaAcademicaCommand;
 
-public class ConsultarHistoriaAcademicaUseCase extends UseCase<RequestCommand<ConsultarHistoriaAcademica>, ResponseEvents> {
+public class ConsultarHistoriaAcademicaUseCase extends UseCase<RequestCommand<ConsultarHistoriaAcademicaCommand>, ResponseEvents> {
     @Override
-    public void executeUseCase(RequestCommand<ConsultarHistoriaAcademica> requestCommand){
+    public void executeUseCase(RequestCommand<ConsultarHistoriaAcademicaCommand> requestCommand){
         var command = requestCommand.getCommand();
         var estudiante = Estudiante.from(command.getEstudiante().identity(),retrieveEvents());
         if(estudiante.historiaAcademica().materiasCursadas().isEmpty()){
