@@ -21,7 +21,7 @@ public class EstudianteCreado extends DomainEvent {
     protected HistoriaAcademica historiaAcademica;
 
     public EstudianteCreado(IdEstudiante idEstudiante, NombreEstudiante nombreEstudiante, Semestre semestre, Set<Asignatura> asignaturasInscritas, Carrera carrera, Pensum pensum, HistoriaAcademica historiaAcademica) {
-        super("universidad.informacionacademica.EstudianteCreado");
+        super("universidad.informacionacademica.estudiantecreado");
         this.nombreEstudiante = nombreEstudiante;
         this.semestre = semestre;
         this.asignaturasInscritas = asignaturasInscritas;

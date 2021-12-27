@@ -6,7 +6,7 @@ import com.universidad.informacionacademica.domain.estudiante.values.IdPensum;
 import com.universidad.informacionacademica.domain.estudiante.values.MateriasObligatorias;
 import com.universidad.informacionacademica.domain.estudiante.values.MateriasOptativas;
 
-public class Pensum extends Entity {
+public class Pensum extends Entity<IdPensum> {
     private final MateriasObligatorias materiasObligatorias;
     private final MateriasOptativas materiasOptativas;
 
@@ -21,11 +21,11 @@ public class Pensum extends Entity {
         this.materiasObligatorias.getMateriasObligatorias().removeIf(materia -> materia.identity().equals(id));
     }
 
-    public MateriasObligatorias getMateriasObligatorias() {
+    public MateriasObligatorias materiasObligatorias() {
         return materiasObligatorias;
     }
 
-    public MateriasOptativas getMateriasOptativas() {
+    public MateriasOptativas materiasOptativas() {
         return materiasOptativas;
     }
 }
