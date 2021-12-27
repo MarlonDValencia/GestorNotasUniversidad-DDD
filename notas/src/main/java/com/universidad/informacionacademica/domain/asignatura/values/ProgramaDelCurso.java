@@ -11,12 +11,13 @@ public class ProgramaDelCurso implements ValueObject<Map<String,String>> {
         this.programa = programa;
     }
 
+
     public Map<String, String> getPrograma() {
         return programa;
     }
 
     @Override
     public Map<String, String> value() {
-        return null;
+        return programa;
     }
 }

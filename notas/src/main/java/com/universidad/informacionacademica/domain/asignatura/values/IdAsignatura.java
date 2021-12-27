@@ -13,4 +13,5 @@ public class IdAsignatura extends Identity {
     public static IdAsignatura of (String value){
         return new IdAsignatura(value);
     }
+
 }

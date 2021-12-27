@@ -12,8 +12,8 @@ public class HistoriaAcademica extends Entity<IdHistoriaAcademica>{
     private final HashMap<Asignatura, Nota> materiasCursadas;
     private final PorcentajeDeAvance porcentajeDeAvance;
 
-    public HistoriaAcademica(IdHistoriaAcademica entityId, HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance) {
-        super(entityId);
+    public HistoriaAcademica(IdHistoriaAcademica idHistoriaAcademica, HashMap<Asignatura, Nota> materiasCursadas, PorcentajeDeAvance porcentajeDeAvance) {
+        super(idHistoriaAcademica);
         this.materiasCursadas = materiasCursadas;
         this.porcentajeDeAvance = porcentajeDeAvance;
     }
